@@ -1,6 +1,9 @@
 Bing Wallpaper for Mac and Ubuntu
 =================================
 
+中国版
+http://cn.bing.com
+
 Information
 -----------
 A script which downloads the latest picture of the day from Bing.com and saves
