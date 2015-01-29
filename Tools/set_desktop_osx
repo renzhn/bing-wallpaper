@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+## http://mentalized.net/journal/2014/03/10/change-desktop-background-from-command-line/
+abort "Usage: #{__FILE__} [image]" if ARGV.empty?
+
+require "appscript"
+
+def desktops
+  system_events.desktops
+end
+
+def get_wallpaper(path)
+  if Dir.exists?(path)
+    files = Dir.glob(File.join(path, "*.{png,jpg}"))
+    files.sample
+  else
+    path
+  end
+end
+
+def set_wallpaper(wallpaper_path)
+  desktops.picture.set(wallpaper_path)
+end
+
+def system_events
+  Appscript.app("System Events")
+end
+
+wallpaper_path = File.expand_path(ARGV.first)
+wallpaper_path = get_wallpaper(wallpaper_path)
+set_wallpaper(wallpaper_path)

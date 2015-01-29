@@ -43,6 +43,10 @@ http://blog.ideasftw.com/2013/03/use-mac-calendar-and-automator-to-run.html).
 Modify the app (from within Automator) as it needs to point to
 **bing-wallpaper.sh** and the correct **PICTURE_DIR**.
 
+**Tools/bing-today-pic.sh** can fetch today's image and link it to today.jpg and set as desktop on OS X
+
+make sure **rb-appscript** is installed: `gem install rb-appscript`
+
 Configuration on Ubuntu
 -----------------------
 **TL;DR:**

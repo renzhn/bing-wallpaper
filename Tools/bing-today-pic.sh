@@ -16,6 +16,7 @@
 
 SCRIPT_DIR="$(dirname ${BASH_SOURCE[0]})"
 BING_SCRIPT="${SCRIPT_DIR}/../bing-wallpaper.sh"
+SET_DESKTOP_SCRIPT="${SCRIPT_DIR}/set_desktop_osx"
 
 echo 'Running the bing-wallpaper script and loading settings.'
 # NOTE: $PICTURE_DIR and $filename is sourced from bing-wallpaper.sh
@@ -26,3 +27,5 @@ rm "${PICTURE_DIR}/today.jpg"
 
 echo "Linking today's Bing wallpaper to today.jpg."
 ln -s "${PICTURE_DIR}/${filename}" "${PICTURE_DIR}/today.jpg"
+
+ruby ${SET_DESKTOP_SCRIPT} "${PICTURE_DIR}/today.jpg"
